@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-action-runners
+  labels:
+    app: github-action-runners
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-action-runners
+  template:
+    metadata:
+      labels:
+        app: github-action-runners
+    spec:
+      containers:
+        - image: github-action-runners:latest
+          name: github-action-runners
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: GITHUB_OWNER
+              value: ajaychinthapalli
+            - name: GITHUB_REPOSITORY
+              value: github-action-runners
+            - name: GITHUB_PAT
+              value: <PAT>

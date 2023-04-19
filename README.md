@@ -152,7 +152,7 @@ Install additional tools on the runner.
 Ajays-MBP:github-action-runners ajay$ docker run --name github-action-runners \
 >     -e GITHUB_OWNER=ajaychinthapalli \
 >     -e GITHUB_REPOSITORY=github-action-runners \
->     -e GITHUB_PAT=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 \
+>     -e GITHUB_PAT=<PAT> \
 >     -e ADDITIONAL_PACKAGES=firefox-esr,chromium \
 >     github-action-runners
 Installing additional packages: firefox-esr chromium
